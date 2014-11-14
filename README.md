@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/twilio/twilio-php.png?branch=master)](http://travis-ci.org/twilio/twilio-php)
+[![Build Status](https://secure.travis-ci.org/bikegriffith/stringkata-php.png?branch=master)](http://travis-ci.org/bikegriffith/stringkata-php)
 
 # stringkata-php
 
