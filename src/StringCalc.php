@@ -1,12 +1,15 @@
 <?php
 
+/**
+ * String Calculator
+ */
 class StringCalc {
 
     /**
-     * Process the string of input as if a calculator were adding it.
+     * Process the string of input as if a (strange) calculator were adding it.
      *
      * @param String
-     * @returns Decimal
+     * @return Decimal
      */
     public function add($numbers) {
         if (!$numbers) {
@@ -23,8 +26,9 @@ class StringCalc {
      * criteria:
      *   - Over 1000
      *   - Whitespace
+     * 
      * @param Array
-     * @returns Array
+     * @return Array
      */
     protected function filter($numberArr) {
         return array_filter($numberArr, function($number) {
@@ -35,6 +39,7 @@ class StringCalc {
     /**
      * Process validation criteria and raise an exception if any issues are
      * found.
+     * 
      * @param number array
      */
     protected function validate($numberArr) {
