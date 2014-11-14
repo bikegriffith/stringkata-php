@@ -17,6 +17,11 @@ class StringCalcTest extends PHPUnit_Framework_TestCase {
     public function testAddsWithMultipleDelimeters() {
         $this->assertEquals(10, $this->calc->add("1\n2,3 4"));
     }
+
+    public function testRejectsNegativeNumbers() {
+        $this->setExpectedException('InvalidArgumentException');
+        $this->calc->add('-1,-2');
+    }
 }
 
 ?>
