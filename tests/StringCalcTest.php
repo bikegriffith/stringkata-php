@@ -27,6 +27,10 @@ class StringCalcTest extends PHPUnit_Framework_TestCase {
         $this->setExpectedException('InvalidArgumentException');
         $this->calc->add('a,b');
     }
+
+    public function testIgnoresNumbersOver1000() {
+        $this->assertEquals(2, $this->calc->add("2 + 1001"));
+    }
 }
 
 ?>

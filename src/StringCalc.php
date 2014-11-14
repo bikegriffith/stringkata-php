@@ -3,18 +3,40 @@
 class StringCalc {
 
     /**
-     * @param $numbers
-     * @returns the sum of all inputs
+     * Process the string of input as if a calculator were adding it.
+     *
+     * @param String
+     * @returns Decimal
      */
     public function add($numbers) {
         if (!$numbers) {
             return 0;
         }
-        $numberArr = preg_split("/(,|\n|\\s)/", $numbers);
+        $numberArr = preg_split("/(,|\n|\\s|\\+)/", $numbers);
+        $numberArr = $this->filter($numberArr);
         $this->validate($numberArr);
         return array_sum($numberArr);
     }
 
+    /**
+     * Ignore (but don't raise Exception) anything that matches the following
+     * criteria:
+     *   - Over 1000
+     *   - Whitespace
+     * @param Array
+     * @returns Array
+     */
+    protected function filter($numberArr) {
+        return array_filter($numberArr, function($number) {
+                return $number && $number <= 1000;
+            });
+    }
+
+    /**
+     * Process validation criteria and raise an exception if any issues are
+     * found.
+     * @param number array
+     */
     protected function validate($numberArr) {
         foreach ($numberArr as $number) {
             if (!is_numeric($number)) {
