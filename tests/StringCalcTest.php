@@ -22,6 +22,11 @@ class StringCalcTest extends PHPUnit_Framework_TestCase {
         $this->setExpectedException('InvalidArgumentException');
         $this->calc->add('-1,-2');
     }
+
+    public function testRejectsNonNumbers() {
+        $this->setExpectedException('InvalidArgumentException');
+        $this->calc->add('a,b');
+    }
 }
 
 ?>

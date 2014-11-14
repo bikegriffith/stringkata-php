@@ -10,13 +10,20 @@ class StringCalc {
         if (!$numbers) {
             return 0;
         }
-        $split = preg_split("/(,|\n|\\s)/", $numbers);
-        foreach ($split as $number) {
+        $numberArr = preg_split("/(,|\n|\\s)/", $numbers);
+        $this->validate($numberArr);
+        return array_sum($numberArr);
+    }
+
+    protected function validate($numberArr) {
+        foreach ($numberArr as $number) {
+            if (!is_numeric($number)) {
+                throw new InvalidArgumentException("'$number' is not a number");
+            }
             if ($number < 0) {
                 throw new InvalidArgumentException('Negative numbers are not allowed in this kata');
             }
         }
-        return array_sum($split);
     }
 }
 
