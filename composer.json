@@ -1,0 +1,21 @@
+{
+    "name": "stringkata-php",
+    "type": "library",
+    "description": "A PHP example of the string kata TDD exercise",
+    "keywords": ["kata", "php", "string", "calculator"],
+    "homepage": "http://github.com/bikegriffith/stringkata-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Griffith",
+            "email": "bikegriffith@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.1"
+    },
+    "require-dev": {
+        "mockery/mockery": ">=0.7.2",
+        "phpunit/phpunit": "3.7.*"
+    }
+}
