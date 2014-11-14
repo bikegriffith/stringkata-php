@@ -11,11 +11,11 @@ class StringCalc {
      * @param String
      * @return Decimal
      */
-    public function add($numbers) {
-        if (!$numbers) {
+    public function add($input) {
+        if (!$input) {
             return 0;
         }
-        $numberArr = preg_split("/(,|\n|\\s|\\+)/", $numbers);
+        $numberArr = preg_split("/(,|\n|\\s|\\+)/", $input);
         $numberArr = $this->filter($numberArr);
         $this->validate($numberArr);
         return array_sum($numberArr);
@@ -40,7 +40,7 @@ class StringCalc {
      * Process validation criteria and raise an exception if any issues are
      * found.
      * 
-     * @param number array
+     * @param Array
      */
     protected function validate($numberArr) {
         foreach ($numberArr as $number) {
